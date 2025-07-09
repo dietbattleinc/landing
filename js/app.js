@@ -1,4 +1,4 @@
-const base = "/";
+const base = "/landing";
 
 const urlFor = (path = "") => {
   return `${base}${path.replace(/^\//, "")}`;
