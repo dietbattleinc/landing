@@ -6,44 +6,33 @@
     <title>개인정보 처리방침 - 다이어트 배틀</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
-        font-family: "Noto Sans KR", sans-serif;
+        font-family: "Inter", "Noto Sans KR", sans-serif;
+        overflow-x: hidden;
       }
+
       pre {
         white-space: pre-wrap;
         word-wrap: break-word;
         overflow-x: auto;
-        max-width: 100%;
-        padding: 1rem;
-        background-color: #f9fafb;
-        border-radius: 0.5rem;
-        line-height: 1.6;
-      }
-      @media (max-width: 640px) {
-        pre {
-          font-size: 0.875rem;
-          line-height: 1.5;
-        }
       }
     </style>
   </head>
   <body class="bg-gray-50">
-    <!-- 헤더 컴포넌트 -->
-    <div id="header">
-      <!-- Header content will be loaded here by JavaScript -->
-    </div>
+    <div id="header"></div>
 
-    <!-- 개인정보 처리방침 내용 -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
       <div class="bg-white rounded-xl shadow-md p-8">
         <h1 class="text-3xl font-bold text-gray-800 mb-8">개인정보 처리방침</h1>
 
         <div class="prose max-w-none">
-          <pre class="text-gray-600 mb-6">
+          <pre
+            class="p-4 bg-gray-50 rounded-lg max-w-full text-sm sm:text-base text-gray-600 mb-6"
+          >
 ㈜다이어트 배틀의 개인정보수집방침은 정보통신서비스제공자가 준수하여야 하는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 관계 법령 및 개인정보보호 규정, 가이드라인을 준수하고 있습니다. 본 개인정보수집방침은 회사에서 운영하는 다이어트 배틀 서비스(이하 “다이어트 배틀”)에 적용됩니다.
 회사는 개인정보수집방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.본 방침은 2025년 7월 1일 부터 시행됩니다.
 
@@ -153,33 +142,12 @@
 
 이 개인정보수집방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.
           </pre>
-
         </div>
       </div>
     </main>
 
-    <!-- 푸터 컴포넌트 -->
-    <div id="footer">
-      <!-- Footer content will be loaded here by JavaScript -->
-    </div>
+    <div id="footer"></div>
 
-    <!-- JavaScript -->
-    <script>
-      // Load header and footer components
-      function loadComponent(componentId, filePath) {
-        fetch(filePath)
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById(componentId).innerHTML = html;
-          })
-          .catch(error => console.error(`Error loading ${componentId}:`, error));
-      }
-
-      // Load components
-      document.addEventListener('DOMContentLoaded', function() {
-        loadComponent('header', '../components/header.html');
-        loadComponent('footer', '../components/footer.html');
-      });
-    </script>
+    <script src="/js/app.js"></script>
   </body>
 </html>
