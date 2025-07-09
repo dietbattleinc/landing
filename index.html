@@ -4,34 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>다이어트 배틀</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Inter", "Noto Sans KR", sans-serif;
         overflow-x: hidden;
-        /* 가로 스크롤 방지 */
       }
     </style>
   </head>
 
   <body class="bg-white text-gray-800">
-    <!-- 헤더 컴포넌트 -->
-    <div id="header">
-      <!-- Header content will be loaded here by JavaScript -->
-    </div>
+    <div id="header"></div>
 
-    <!-- 히어로 섹션 -->
     <section
       class="relative bg-white py-16 md:py-24 text-gray-800 overflow-hidden min-h-[70vh] flex items-center"
     >
-      <!-- 빨간색 배경 도형: 이미지의 오른쪽 상단 빨간색 영역과 유사하게 배치 -->
       <div class="absolute top-0 right-0 rounded-bl-full hidden md:block"></div>
-      <!-- 모바일에서는 빨간색 배경을 숨기고 데스크톱에서만 표시 -->
 
       <div
         class="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-center gap-8 relative z-10"
@@ -78,7 +70,7 @@
         <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center relative z-20">
           <div class="p-2 bg-white rounded-[40px] shadow-2xl">
             <img
-              src="./assets/app-1.png"
+              data-dynamic-src="assets/app-1.png"
               alt="앱 스크린샷"
               class="h-[500px] rounded-[32px] border-4 border-gray-200"
             />
@@ -87,19 +79,16 @@
       </div>
     </section>
 
-    <!-- 배너 이미지 -->
     <div class="container mx-auto px-6 md:px-12">
       <img
-        src="./assets/banner-1.png"
+        data-dynamic-src="assets/banner-1.png"
         alt="배너 이미지"
         class="w-full h-auto rounded-xl"
       />
     </div>
 
-    <!-- 특징 섹션 -->
     <section class="py-16 md:py-24 bg-white">
       <div class="container mx-auto px-6 md:px-12">
-        <!-- 특징 01 -->
         <div
           class="mb-20 flex flex-col md:flex-row items-center justify-center gap-12"
         >
@@ -154,16 +143,14 @@
             </div>
           </div>
           <div class="md:w-1/2 flex justify-center order-1 md:order-2">
-            <!-- 특징 이미지 01 - 실제 이미지로 교체하세요 -->
             <img
-              src="./assets/section-1.png"
+              data-dynamic-src="assets/section-1.png"
               alt="특징 01"
               class="rounded-lg shadow-xl w-full max-w-sm md:max-w-md"
             />
           </div>
         </div>
 
-        <!-- 특징 02 -->
         <div
           class="mb-20 flex flex-col md:flex-row-reverse items-center justify-center gap-12"
         >
@@ -180,16 +167,14 @@
             </p>
           </div>
           <div class="md:w-1/2 flex justify-center order-1 md:order-2">
-            <!-- 특징 이미지 02 - 실제 이미지로 교체하세요 -->
             <img
-              src="./assets/section-2.png"
+              data-dynamic-src="assets/section-2.png"
               alt="특징 02"
               class="rounded-lg shadow-xl w-full max-w-sm md:max-w-md"
             />
           </div>
         </div>
 
-        <!-- 특징 03 -->
         <div
           class="flex flex-col md:flex-row items-center justify-center gap-12"
         >
@@ -209,9 +194,8 @@
             </p>
           </div>
           <div class="md:w-1/2 flex justify-center order-1 md:order-2">
-            <!-- 특징 이미지 03 - 실제 이미지로 교체하세요 (이미지의 복잡한 그래픽을 단순화) -->
             <img
-              src="./assets/section-3.png"
+              src="/assets/section-3.png"
               alt="특징 03"
               class="rounded-lg shadow-xl w-full max-w-sm md:max-w-md"
             />
@@ -220,7 +204,6 @@
       </div>
     </section>
 
-    <!-- 행동 유도 (Call to Action) / 하단 배너 섹션 -->
     <section
       class="py-20 md:py-32 flex items-center justify-center text-center bg-white"
     >
@@ -244,26 +227,7 @@
       </div>
     </section>
 
-    <!-- 푸터 컴포넌트 -->
-    <div id="footer">
-      <!-- Footer content will be loaded here by JavaScript -->
-    </div>
-    <script>
-      // Load header and footer components
-      function loadComponent(componentId, filePath) {
-        fetch(filePath)
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById(componentId).innerHTML = html;
-          })
-          .catch(error => console.error(`Error loading ${componentId}:`, error));
-      }
-
-      // Load components
-      document.addEventListener('DOMContentLoaded', function() {
-        loadComponent('header', './components/header.html');
-        loadComponent('footer', './components/footer.html');
-      });
-    </script>
+    <div id="footer"></div>
+    <script src="/js/app.js"></script>
   </body>
 </html>
